@@ -1,6 +1,9 @@
 const express = require('express');
 const socket = require('socket.io');
 const app = express();
+const models = require('./models/index');
+const model = require('./models');
+const port = process.env.PORT | 3000;
 /*app.use(cors({ origin: '*' }));
 app.use(bodyParser);
 let x = true;*/
@@ -25,6 +28,18 @@ io.sockets.on('connection', (socket) => {
             start = start + data.interval;
         }
         socket.emit('response', arr);
+        model.data.create({
+            startvalue: data.start_val,
+            endvalue: data.end_val,
+            difference: data.interval
+
+        });
+        // socket.emit('response', arr);
+        /*for (let x = 0; x < arr.length; x++) {
+            setTimeout(() => {
+                socket.emit('response', [arr[x]]);
+            }, 1000 * (x + 1));
+        }*/
 
 
 
