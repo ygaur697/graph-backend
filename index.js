@@ -3,7 +3,7 @@ const socket = require('socket.io');
 const app = express();
 const models = require('./models/index');
 const model = require('./models');
-const port = process.env.PORT | 3000;
+const port = process.env.PORT | 4000;
 /*app.use(cors({ origin: '*' }));
 app.use(bodyParser);
 let x = true;*/
