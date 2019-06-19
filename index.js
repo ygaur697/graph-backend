@@ -39,7 +39,7 @@ io.sockets.on('connection', (socket) => {
             setTimeout(() => {
                 socket.emit('response', [arr[x]]);
             }, 1000 * (x + 1));
-        }*/
+        }*/ 
 
 
 
